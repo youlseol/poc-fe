@@ -1,4 +1,11 @@
-import './globals.css'
+import "@/styles/globals.css"
+import { Inter as FontSans } from "@next/font/google"
+import { cn } from "@/lib/utils"
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-inter",
+})
 
 export default function RootLayout({
   children,
@@ -6,13 +13,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html
+      lang="en"
+      className={cn(
+        "bg-white font-sans text-slate-900 antialiased",
+        fontSans.variable
+      )}
+    >
       <head />
-      <body>{children}</body>
+      <body className="min-h-screen">
+        {children}
+      </body>
     </html>
   )
 }
