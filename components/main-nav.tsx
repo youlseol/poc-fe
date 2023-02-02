@@ -31,9 +31,9 @@ export function MainNav({ items, children }: MainNavProps) {
               height={24}
               priority
             />
-        <span className="hidden font-bold sm:inline-block">
+        {/* <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
-        </span>
+        </span> */}
       </Link>
       {items?.length ? (
         <nav className="hidden gap-6 md:flex">
@@ -42,7 +42,7 @@ export function MainNav({ items, children }: MainNavProps) {
               key={index}
               href={item.disabled ? "#" : item.href}
               className={cn(
-                "flex items-center text-lg font-semibold text-slate-600 sm:text-sm",
+                "flex items-center text-lg font-semibold text-slate-600 sm:text-sm bg-[#682C78]",
                 item.href.startsWith(`/${segment}`) && "text-slate-900",
                 item.disabled && "cursor-not-allowed opacity-80"
               )}

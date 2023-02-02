@@ -43,6 +43,11 @@
   "resolved" "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   "version" "1.2.1"
 
+"@microsoft/office-js@^1.1.83":
+  "integrity" "sha512-iNYJpKc22symXWMk3sCeTABtR5QNdy18NlVEUv0N/v35Ys75GsaukGDY5t2+s/03K8nLNOKut4+YGiOthpWPeA=="
+  "resolved" "https://registry.npmjs.org/@microsoft/office-js/-/office-js-1.1.83.tgz"
+  "version" "1.1.83"
+
 "@next/env@13.1.5":
   "integrity" "sha512-0Ry4NhJy6qLbXhvxPRUQ1H6RzgtryGdUto7hfgAK0Iw/bScgeVjwLZdfhm2iT7qsOS32apo9cWzLCxjc6iGPsA=="
   "resolved" "https://registry.npmjs.org/@next/env/-/env-13.1.5.tgz"

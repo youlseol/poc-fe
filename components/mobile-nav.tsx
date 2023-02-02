@@ -23,7 +23,7 @@ export function MobileNav({ items, children }: MobileNavProps) {
       )}
     >
       <div className="relative z-20 grid gap-6 rounded-md bg-white p-4 shadow-md">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2 bg-[#682C78]">
           {/* <Icons.logo /> */}
           <Image
               src="/logo.svg"

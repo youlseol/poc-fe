@@ -6,7 +6,6 @@ import { formatDate } from "@/lib/utils"
 import {getMagazineDetail} from '@/pages/api/magazine/api'
 import {MagazineDetail} from '@/pages/api/magazine/model'
 
-
 async function getMagazine(id : string): Promise<MagazineDetail | null> {
   try {
     const magazine = await getMagazineDetail(id);
