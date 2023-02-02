@@ -1,13 +1,13 @@
-'use client'
+'use client';
 
-import { useRouter } from "next/navigation"
+import { useRouter } from 'next/navigation';
 
 export default function Back() {
-  const router = useRouter()
-  
+  const router = useRouter();
+
   return (
     <>
-      <button onClick={router.back} >뒤로가기</button>
+      <button onClick={router.back}>뒤로가기</button>
     </>
-  )
+  );
 }

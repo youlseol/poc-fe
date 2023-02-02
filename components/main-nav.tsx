@@ -1,36 +1,30 @@
-"use client"
+'use client';
 
-import * as React from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { useSelectedLayoutSegment } from "next/navigation"
+import * as React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { useSelectedLayoutSegment } from 'next/navigation';
 
-import { MainNavItem } from "types"
-import { cn } from "@/lib/utils"
-import { siteConfig } from "@/config/site"
-import { Icons } from "./icons"
-import { MobileNav } from "@/components/mobile-nav"
+import { type MainNavItem } from 'types';
+import { cn } from '@/lib/utils';
+import { siteConfig } from '@/config/site';
+import { Icons } from './icons';
+import { MobileNav } from '@/components/mobile-nav';
 
 interface MainNavProps {
-  items?: MainNavItem[]
-  children?: React.ReactNode
+  items?: MainNavItem[];
+  children?: React.ReactNode;
 }
 
 export function MainNav({ items, children }: MainNavProps) {
-  const segment = useSelectedLayoutSegment()
-  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false)
+  const segment = useSelectedLayoutSegment();
+  const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
 
   return (
-    <div className="flex gap-6 md:gap-10"> 
+    <div className="flex gap-6 md:gap-10">
       <Link href="/" className="hidden items-center space-x-2 md:flex">
         {/* <Icons.logo /> */}
-        <Image
-              src="/logo.svg"
-              alt="220 Logo"
-              width={100}
-              height={24}
-              priority
-            />
+        <Image src="/logo.svg" alt="220 Logo" width={100} height={24} priority />
         {/* <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span> */}
@@ -40,11 +34,11 @@ export function MainNav({ items, children }: MainNavProps) {
           {items?.map((item, index) => (
             <Link
               key={index}
-              href={item.disabled ? "#" : item.href}
+              href={item.disabled ? '#' : item.href}
               className={cn(
-                "flex items-center text-lg font-semibold text-slate-600 sm:text-sm bg-[#682C78]",
-                item.href.startsWith(`/${segment}`) && "text-slate-900",
-                item.disabled && "cursor-not-allowed opacity-80"
+                'flex items-center text-lg font-semibold text-slate-600 sm:text-sm bg-[#682C78]',
+                item.href.startsWith(`/${segment}`) && 'text-slate-900',
+                item.disabled && 'cursor-not-allowed opacity-80'
               )}
             >
               {item.title}
@@ -52,21 +46,21 @@ export function MainNav({ items, children }: MainNavProps) {
           ))}
         </nav>
       ) : null}
-     <button
+      <button
         className="flex items-center space-x-2 md:hidden"
-        onClick={() => setShowMobileMenu(!showMobileMenu)}
+        onClick={() => {
+          setShowMobileMenu(!showMobileMenu);
+        }}
       >
         {/* {showMobileMenu ? <Icons.close /> : <Icons.logo />} */}
-        {showMobileMenu ? <Icons.close /> : <Image
-                                              src="/logo.svg"
-                                              alt="220 Logo"
-                                              width={100}
-                                              height={24}
-                                              priority
-                                            />}
+        {showMobileMenu ? (
+          <Icons.close />
+        ) : (
+          <Image src="/logo.svg" alt="220 Logo" width={100} height={24} priority />
+        )}
         <span className="font-bold">Menu</span>
       </button>
       {showMobileMenu && <MobileNav items={items}>{children}</MobileNav>}
     </div>
-  )
+  );
 }

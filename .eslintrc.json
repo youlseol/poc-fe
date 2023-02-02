@@ -1,3 +1,25 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  ////"plugins": ["react", "next", "prettier"],
+  // "plugins": ["react", "prettier"],
+  // "extends": [
+  //   "plugin:react/recommended",
+  //   "plugin:prettier/recommended",
+  //   "plugin:react-hooks/recommended",
+  //   "standard-with-typescript",
+  //   "eslint:recommended",
+  //   "next"
+  // ],
+  //"extends": ["eslint:recommended", "next"]
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {}
 }

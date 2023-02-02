@@ -1,9 +1,10 @@
-'use client'
+'use client';
 
-import Link from 'next/link'
+import Link from 'next/link';
 
 export default function Header() {
-  return (<></>
+  return (
+    <></>
     // <header>
     //   <ul>
     //     <li>
@@ -14,5 +15,5 @@ export default function Header() {
     //     </li>
     //   </ul>
     // </header>
-  )
+  );
 }

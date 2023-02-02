@@ -19,11 +19,11 @@ import {
   Trash,
   Twitter,
   User,
-  X,
-} from "lucide-react"
-import type { Icon as LucideIcon } from "lucide-react"
+  X
+} from 'lucide-react';
+import type { Icon as LucideIcon } from 'lucide-react';
 
-export type Icon = LucideIcon
+export type Icon = LucideIcon;
 
 export const Icons = {
   logo: Command,
@@ -46,5 +46,5 @@ export const Icons = {
   pizza: Pizza,
   gitHub: Github,
   twitter: Twitter,
-  check: Check,
-}
+  check: Check
+};

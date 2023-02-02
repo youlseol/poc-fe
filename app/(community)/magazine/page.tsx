@@ -1,16 +1,15 @@
-import { Suspense } from "react";
-import Link from 'next/link'
-import Image from "next/image"
-import {getMagazineList} from '@/pages/api/magazine/api'
-import {Magazine} from '@/pages/api/magazine/model'
-
+import { Suspense } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { getMagazineList } from '@/pages/api/magazine/api';
+import { Magazine } from '@/pages/api/magazine/model';
 
 async function getMagazines(): Promise<Magazine[] | null> {
   try {
     const magazines = await getMagazineList();
     return magazines;
   } catch (error) {
-    return null
+    return null;
   }
 }
 
@@ -25,22 +24,17 @@ export default async function Page() {
           <h1 className="inline-block text-4xl font-extrabold tracking-tight text-slate-900 lg:text-5xl">
             Magazine
           </h1>
-          <p className="text-xl text-slate-600">
-            최신
-          </p>
+          <p className="text-xl text-slate-600">최신</p>
         </div>
       </div>
       <hr className="my-8 border-slate-200" />
       {magazines?.length ? (
         <div className="grid gap-10 sm:grid-cols-2">
           {magazines.map((magazine, index) => (
-            <article
-              key={magazine.feedId}
-              className="group relative flex flex-col space-y-2"
-            >
+            <article key={magazine.feedId} className="group relative flex flex-col space-y-2">
               {magazine.thumbnailFilePath && (
                 <Image
-                  src={PUBLIC_BUCKET_URL+magazine.thumbnailFilePath}
+                  src={PUBLIC_BUCKET_URL + magazine.thumbnailFilePath}
                   alt={magazine.feedTitle}
                   width={804}
                   height={452}
@@ -67,5 +61,5 @@ export default async function Page() {
         <p>No magazines published.</p>
       )}
     </div>
-  )
+  );
 }

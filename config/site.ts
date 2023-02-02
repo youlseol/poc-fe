@@ -1,9 +1,9 @@
-import { SiteConfig } from "types"
+import { SiteConfig } from 'types';
 
 export const siteConfig: SiteConfig = {
-  name: "220Cord&Code",
+  name: '220Cord&Code',
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn/taxonomy",
-  },
-}
+    twitter: 'https://twitter.com/shadcn',
+    github: 'https://github.com/shadcn/taxonomy'
+  }
+};

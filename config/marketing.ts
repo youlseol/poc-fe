@@ -1,4 +1,4 @@
-import { MarketingConfig } from "types"
+import { MarketingConfig } from 'types';
 
 export const marketingConfig: MarketingConfig = {
   mainNav: [
@@ -8,16 +8,16 @@ export const marketingConfig: MarketingConfig = {
     //   disabled: true,
     // },
     {
-      title: "Home",
-      href: "/",
+      title: 'Home',
+      href: '/'
     },
     {
-      title: "Magazine",
-      href: "/magazine",
+      title: 'Magazine',
+      href: '/magazine'
     },
     {
-      title: "Post",
-      href: "/post",
-    },
-  ],
-}
+      title: 'Post',
+      href: '/post'
+    }
+  ]
+};

@@ -2,16 +2,23 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    appDir: true,
+    appDir: true
   },
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'download-apk.220cordncode.com',
-      },
-    ],
-  },
-}
+        hostname: 'download-apk.220cordncode.com'
+      }
+    ]
+  }
+  // typescript: {
+  //   // !! WARN !!
+  //   // Dangerously allow production builds to successfully complete even if
+  //   // your project has type errors.
+  //   // !! WARN !!
+  //   ignoreBuildErrors: true
+  // }
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

@@ -1,18 +1,16 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
-import { marketingConfig } from "@/config/marketing"
-import { MainNav } from "@/components/main-nav"
-import { SiteFooter } from "@/components/site-footer"
+import { marketingConfig } from '@/config/marketing';
+import { MainNav } from '@/components/main-nav';
+import { SiteFooter } from '@/components/site-footer';
 
 interface MagazineLayoutProps {
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
-export default async function MagazineLayout({
-  children,
-}: MagazineLayoutProps) {
+export default async function MagazineLayout({ children }: MagazineLayoutProps) {
   return (
-      <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col">
       {/* <header className="container sticky top-0 z-40 bg-[#682C78]">
         <div className="flex h-16 items-center justify-between border-b border-b-slate-200 py-4">
           <MainNav items={marketingConfig.mainNav} />
@@ -28,6 +26,6 @@ export default async function MagazineLayout({
       </header> */}
       <main className="flex-1">{children}</main>
       {/* <SiteFooter /> */}
-      </div>
-  )
+    </div>
+  );
 }
