@@ -19,20 +19,20 @@ export function MobileNav({ items, children }: MobileNavProps) {
   return (
     <div
       className={cn(
-        "fixed inset-0 top-16 z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto p-6 pb-32 shadow-md animate-in slide-in-from-bottom-80 md:hidden"
+        "fixed inset-0 top-16 z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto p-6 pb-32 shadow-md animate-in slide-in-from-top md:hidden"
       )}
     >
-      <div className="relative z-20 grid gap-6 rounded-md bg-white p-4 shadow-md">
-        <Link href="/" className="flex items-center space-x-2 bg-[#682C78]">
+      <div className="relative z-20 grid gap-6 rounded-md bg-white p-4 shadow-md bg-[#682C78]">
+        <Link href="/" className="flex items-center space-x-2">
           {/* <Icons.logo /> */}
           <Image
               src="/logo.svg"
               alt="220 Logo"
-              width={100}
-              height={24}
+              width={200}
+              height={50}
               priority
             />
-          <span className="font-bold">{siteConfig.name}</span>
+          {/* <span className="font-bold">{siteConfig.name}</span> */}
         </Link>
         <nav className="grid grid-flow-row auto-rows-max text-sm">
           {items && items.map((item, index) => (
