@@ -10,10 +10,10 @@ export default function Home() {
     <main className={styles.main}>
       <Header />
       <div className={styles.description}>
-        <p>
+        {/* <p>
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.tsx</code>
-        </p>
+        </p> */}
         <div>
             <Image
               src="/logo.svg"
@@ -45,21 +45,21 @@ export default function Home() {
           <h2 className={inter.className}>
             Magazine <span>-&gt;</span>
           </h2>
-          {/* <p className={inter.className}>
+          <p className={inter.className}>
             Find in-depth information about Next.js features and API.
-          </p> */}
+          </p>
         </a>
 
         <a
-          href="/board"
+          href="/post"
           className={styles.card}
           target="_self"
           rel="noopener noreferrer"
         >
           <h2 className={inter.className}>
-            Board <span>-&gt;</span>
+            Post <span>-&gt;</span>
           </h2>
-          {/* <p className={inter.className}>Explore the Next.js 13 playground.</p> */}
+          <p className={inter.className}>Explore the Next.js 13 playground.</p>
         </a>  
       </div>
     </main>

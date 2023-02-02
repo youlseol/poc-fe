@@ -16,8 +16,8 @@ export const marketingConfig: MarketingConfig = {
       href: "/magazine",
     },
     {
-      title: "Board",
-      href: "/board",
+      title: "Post",
+      href: "/post",
     },
   ],
 }

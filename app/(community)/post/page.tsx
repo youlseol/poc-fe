@@ -24,11 +24,11 @@ export default async function Page({params}: {params: { id: string }}) {
   return (
 <article className="container relative max-w py-6 lg:py-10">
 <Link
-  href="/magazine"
+  href="/post"
   className="absolute top-14 -left-[150px] hidden items-center justify-center text-sm font-medium text-slate-600 hover:text-slate-900 xl:inline-flex"
 >
   <Icons.chevronLeft className="mr-2 h-4 w-4" />
-  See all magazines
+  See all posts
 </Link>
 <div>
   {detail?.magazine.createdDatetime && (
@@ -68,11 +68,11 @@ export default async function Page({params}: {params: { id: string }}) {
       <hr className="my-4 border-slate-200" />
       <div className="flex justify-center py-6 lg:py-10">
         <Link
-          href="/magazine"
+          href="/post"
           className="inline-flex items-center justify-center text-sm font-medium text-slate-600 hover:text-slate-900"
         >
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
-          See all magazines
+          See all posts
         </Link>
       </div>
     </article>
