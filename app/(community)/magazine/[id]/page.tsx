@@ -6,7 +6,7 @@ import { Icons } from '@/components/icons';
 import { formatDate } from '@/lib/utils';
 import { getMagazineDetail } from '@/pages/api/magazine/api';
 import { MagazineDetail } from '@/pages/api/magazine/model';
-import { FeedTypeCode } from '@/pages/constants/Feed';
+import { FeedTypeCode } from '@/constants/Feed';
 
 async function getMagazine(id: string): Promise<MagazineDetail | null> {
     try {
