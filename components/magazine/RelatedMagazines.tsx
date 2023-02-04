@@ -16,7 +16,7 @@ export default function RelatedMagazines({ relatedMagazines }: { relatedMagazine
             <h1 className="mt-2 inline-block text-2xl font-extrabold leading-tight text-slate-900 lg:text-5xl">관련 매거진</h1>
             <CustomCarousel>
                 {relatedMagazines.map((magazine, index) => (
-                    <div className="relative flex flex-row space-x-2 mx-2 my-2">
+                    <div className="relative flex flex-row space-x-2 mx-2 my-2" key={magazine.feedId}>
                         <Link
                             href={`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'MagazineScreen', param: {}}}))`}
                         >

@@ -1,4 +1,4 @@
-import { FeedFileForUploadS3 } from '../api/post/model';
+//import { FeedFileForUploadS3 } from '../api/post/model';
 import { BucketTypeCode } from './File';
 
 export enum FeedTypeCode {
@@ -93,14 +93,14 @@ export const POST_MODIFY_BLANK_CONTENTS = {
     contents: ''
 };
 
-export const BLANK_TEMP_FILE: FeedFileForUploadS3 = {
-    contentIndex: -1,
-    fileIndex: -1,
-    signedPath: '',
-    filePath: '',
-    thumbPath: '',
-    type: 'IMAGE'
-};
+// export const BLANK_TEMP_FILE: FeedFileForUploadS3 = {
+//     contentIndex: -1,
+//     fileIndex: -1,
+//     signedPath: '',
+//     filePath: '',
+//     thumbPath: '',
+//     type: 'IMAGE'
+// };
 
 export const QNA_BLANK = {
     title: '',

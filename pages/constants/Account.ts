@@ -1,11 +1,11 @@
-import { AccountFeedItem } from '../api/account/model';
+//import { AccountFeedItem } from '../api/account/model';
 
 export const MY_HOME_FEED_COUNT = 36;
 export const FOLLOWER_LIST_COUNT = 36;
 
 export interface FeedUIList {
     sectionIndex: number;
-    data: AccountFeedItem[];
+    //data: AccountFeedItem[];
 }
 
 export const TAB_DATA = {

@@ -27,6 +27,7 @@ export default function CustomCarousel({ children }: { children?: React.ReactNod
                 infinite={false}
                 itemClass="carousel-item-padding-10-px"
                 keyBoardControl
+                partialVisible={true}
                 minimumTouchDrag={80}
                 pauseOnHover
                 renderArrowsWhenDisabled={false}

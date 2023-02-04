@@ -74,7 +74,6 @@ export enum ActSectionCode {
     RECENT_POST = 'RECENT_POST',
     FOLLOWING_POST = 'FOLLOWING_POST',
     EXPIRED_AB = 'EXPIRED_AB',
-    MAGAZINE = 'MAGAZINE',
     COMMENT = 'COMMENT',
     PRODUCT = 'PRODUCT',
     TAG = 'TAG',
