@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx}' --config ./.prettierrc",
+    "format:win": "prettier --write \".\\**\\*.{ts,tsx,js,jsx}\" --config ./.prettierrc",
     "preview": "next build && next start",
     "export": "next export",
     "clean": "rm -rf .next",
@@ -28,6 +29,7 @@
     "next-auth": "^4.18.10",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-multi-carousel": "^2.8.2",
     "tailwind-merge": "^1.8.1",
     "tailwindcss-animate": "^1.0.5",
     "typescript": "*"
