@@ -1,9 +1,8 @@
-import Back from '@/components/magazine/back';
+
 import RelatedMagazines from '@/components/magazine/RelatedMagazines';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Icons } from '@/components/icons';
-import { formatDate } from '@/lib/utils';
+import RelatedPosts from '@/components/magazine/RelatedPosts';
+import RelatedProducts from '@/components/magazine/RelatedProducts';
+import MagazineTags from '@/components/magazine/MagazineTags';
 import { getMagazineDetail } from '@/pages/api/magazine/api';
 import { MagazineDetail } from '@/pages/api/magazine/model';
 import { FeedTypeCode } from '@/constants/Feed';
@@ -26,12 +25,24 @@ export default async function Page({ params }: { params: { id: string } }) {
     return (
         <>
             {magazineDetail?.magazine && <div dangerouslySetInnerHTML={createMarkup(magazineDetail?.magazine.contents)}></div>}
+            <MagazineTags relatedTags={magazineDetail?.relatedTags || []} />
             <hr className="my-4 border-slate-200" />
             <RelatedMagazines
                 relatedMagazines={
                     magazineDetail?.relatedFeeds.filter((value, _) => {
                         return value.feedTypeCode === FeedTypeCode.MAGAZINE;
                     }) || []
+                }
+            />
+            <RelatedPosts
+                relatedPosts={
+                    magazineDetail?.relatedFeeds.filter((value, _) => {
+                        return value.feedTypeCode === FeedTypeCode.POST;
+                    }) || []
+                }
+            />
+            <RelatedProducts
+                relatedProducts={magazineDetail?.relatedProducts || []
                 }
             />
         </>

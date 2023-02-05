@@ -1,0 +1,42 @@
+
+/* Mobile and Tablet */
+/* @media (max-width: 1023px) {
+  .carousel_li {
+    max-width: 310px;
+  }  
+}
+
+@media (max-width: 463px) {
+  .carousel_li {
+    max-width: 310px;
+    padding: 0 10px;
+  }  
+}
+*/
+
+.carousel_container ul{
+  padding: 0 0.5rem;
+}
+
+.carousel_dot button{
+  border: none !important;
+  background-color: rgb(240, 237, 237);
+  margin-right: 0;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 0.3rem;
+  margin: 0 0.8rem;
+}
+
+.carousel_dot ul{
+  margin-bottom: 1rem;
+}
+
+.react-multi-carousel-dot--active {
+  background-color: rgb(212, 209, 209);
+  border:none;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin: 0 0.5rem;
+} 
+

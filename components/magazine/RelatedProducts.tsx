@@ -4,15 +4,15 @@ import { useRouter } from 'next/navigation';
 import CustomCarousel from '@/components/common/CustomCarousel';
 import Image from 'next/image';
 import Link from 'next/link';
-import { RelatedFeed } from '@/pages/api/magazine/model';
+import { RelatedProduct } from '@/pages/api/magazine/model';
 
-export default function RelatedPosts({ relatedPosts }: { relatedPosts: RelatedFeed[] }) {
+export default function RelatedProducts({ relatedProducts }: { relatedProducts: RelatedProduct[] }) {
     const router = useRouter();
     const NEXT_PUBLIC_BUCKET_URL = String(process.env.NEXT_PUBLIC_BUCKET_URL);
 
     return (
         <>
-            <h1 className="ml-5 my-3 inline-block text-2xl font-extrabold leading-tight text-slate-900 lg:text-5xl">관련 포스트</h1>
+            <h1 className="ml-5 my-3 inline-block text-2xl font-extrabold leading-tight text-slate-900 lg:text-5xl">관련 제품</h1>
             <CustomCarousel props={{showDots:false, responsive:{
                     desktop: {
                         breakpoint: {
@@ -39,20 +39,20 @@ export default function RelatedPosts({ relatedPosts }: { relatedPosts: RelatedFe
                         partialVisibilityGutter: 30
                     }
                 }}}>
-                {relatedPosts.map((post, index) => (
-                    <div key={post.feedId}>
+                {relatedProducts.map((product, index) => (
+                    <div key={product.productId}>
                         <Link
                             href={`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'MagazineScreen', param: {}}}))`}
                         >
                             <Image
-                                src={NEXT_PUBLIC_BUCKET_URL + post.thumbnailFilePath}
-                                alt={post.feedTitle}
+                                src={NEXT_PUBLIC_BUCKET_URL + product.thumbnailFilePath}
+                                alt={product.productName}
                                 width={180}
                                 height={180}
                                 className="rounded-lg border border-slate-200 bg-slate-200 transition-colors group-hover:border-slate-900"
                             />
-                            <p className="text-base font-extrabold text-slate-900 my-2 text-ellipsis">{post.feedTitle}</p>
-                            <p className="text-base text-slate-900 text-ellipsis">{post.nickname}</p>
+                            <p className="text-base font-extrabold text-slate-900 my-2 text-ellipsis">{product.productName}</p>
+                            <p className="text-sm text-slate-900 text-ellipsis">{product.brandName} | {product.productModelName}</p>
                         </Link>
                     </div>
                 ))}
