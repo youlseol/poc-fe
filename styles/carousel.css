@@ -23,3 +23,7 @@
 .dot.active {
   background: #000;
 }
+
+.carousel_half{
+  height: calc((100vw - 2rem)/2);
+}
