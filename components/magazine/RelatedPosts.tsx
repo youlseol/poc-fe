@@ -14,7 +14,7 @@ import '@/styles/carousel.css';
 export default function RelatedPosts({ relatedPosts }: { relatedPosts: RelatedFeed[] }) {
     const router = useRouter();
     const NEXT_PUBLIC_BUCKET_URL = String(process.env.NEXT_PUBLIC_BUCKET_URL);
-    const clickHandler = useCallback(() => window.location.href=`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'MagazineScreen', param: {}}}))`,[]);
+    const clickHandler = useCallback(() => window.location.href=`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'PostScreen', param: {}}}))`,[]);
 
     const [ref] = useKeenSlider<HTMLDivElement>({
         //loop: true,

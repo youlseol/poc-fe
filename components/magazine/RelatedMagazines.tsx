@@ -14,7 +14,7 @@ import '@/styles/carousel.css';
 export default function RelatedMagazines({ relatedMagazines }: { relatedMagazines: RelatedFeed[] }) {
     const router = useRouter();
     const NEXT_PUBLIC_BUCKET_URL = String(process.env.NEXT_PUBLIC_BUCKET_URL);
-    const clickHandler = useCallback(() => window.location.href=`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'MagazineScreen', param: {}}}))`,[]);
+    //const clickHandler = useCallback(() => window.location.href=`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'MagazineScreen', param: {}}}))`,[]);
     
     const [currentSlide, setCurrentSlide] = useState(0)
     const [loaded, setLoaded] = useState(false)
@@ -40,7 +40,8 @@ export default function RelatedMagazines({ relatedMagazines }: { relatedMagazine
                 <div ref={sliderRef} className="keen-slider pl-1">
                 {relatedMagazines.map((magazine, index) => (
                     <div className='keen-slider__slide' key={magazine.feedId}>
-                        <Link href="#" onClick={clickHandler}>
+                        {/* <Link href="#" onClick={clickHandler}> */}
+                        <Link href={`/magazine/${magazine.feedId}`} >
                             <Image
                                 src={NEXT_PUBLIC_BUCKET_URL + magazine.thumbnailFilePath}
                                 alt={magazine.feedTitle}
