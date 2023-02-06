@@ -21,5 +21,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "rules": {}
+  "rules": {
+    "@next/next/no-head-element": "off"
+  }
 }

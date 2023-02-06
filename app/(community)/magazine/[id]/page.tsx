@@ -1,4 +1,5 @@
 
+import { useMemo } from 'react';
 import RelatedMagazines from '@/components/magazine/RelatedMagazines';
 import RelatedPosts from '@/components/magazine/RelatedPosts';
 import RelatedProducts from '@/components/magazine/RelatedProducts';
@@ -21,30 +22,21 @@ function createMarkup(c: string) {
 
 export default async function Page({ params }: { params: { id: string } }) {
     const magazineDetail = await getMagazine(params.id);
-    const NEXT_PUBLIC_BUCKET_URL = String(process.env.NEXT_PUBLIC_BUCKET_URL); //how to get react-native component
+
+    const relatedMagazines = magazineDetail?.relatedFeeds.filter((value, _) => { return value.feedTypeCode === FeedTypeCode.MAGAZINE; }) || [];
+    const relatedPosts = magazineDetail?.relatedFeeds.filter((value, _) => { return value.feedTypeCode === FeedTypeCode.POST; }) || [];
+
     return (
         <>
             {magazineDetail?.magazine && <div dangerouslySetInnerHTML={createMarkup(magazineDetail?.magazine.contents)}></div>}
-            <MagazineTags relatedTags={magazineDetail?.relatedTags || []} />
+            {magazineDetail?.relatedTags && magazineDetail?.relatedTags.length > 0 && <MagazineTags relatedTags={magazineDetail?.relatedTags || []} />}
             <hr className="my-4 border-slate-200" />
-            <RelatedMagazines
-                relatedMagazines={
-                    magazineDetail?.relatedFeeds.filter((value, _) => {
-                        return value.feedTypeCode === FeedTypeCode.MAGAZINE;
-                    }) || []
-                }
-            />
-            <RelatedPosts
-                relatedPosts={
-                    magazineDetail?.relatedFeeds.filter((value, _) => {
-                        return value.feedTypeCode === FeedTypeCode.POST;
-                    }) || []
-                }
-            />
-            <RelatedProducts
+            {relatedMagazines.length > 0 && <RelatedMagazines relatedMagazines={relatedMagazines} />}
+            {relatedPosts.length > 0 && <RelatedPosts relatedPosts={relatedPosts} />}
+            {magazineDetail?.relatedProducts && magazineDetail?.relatedProducts.length > 0 && <RelatedProducts
                 relatedProducts={magazineDetail?.relatedProducts || []
                 }
-            />
+            />}
         </>
     );
 }

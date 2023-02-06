@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styles from '@/styles/carousel.module.css';
-import { factory } from 'typescript';
 
 //const CustomDot = ({onClick, ...rest }) => {
     const CustomDot = ({...rest }) => {
