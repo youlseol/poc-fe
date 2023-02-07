@@ -1,7 +1,7 @@
 'use client';
 
+import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { useState, useCallback } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -33,6 +33,11 @@ export default function RelatedMagazines({ relatedMagazines }: { relatedMagazine
         setLoaded(true)
       },
     })
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     return (
         <>
             <h1 className="ml-5 my-3 inline-block text-2xl font-extrabold leading-tight text-slate-900 lg:text-5xl">관련 매거진</h1>

@@ -1,9 +1,8 @@
-
-import { useMemo } from 'react';
 import RelatedMagazines from '@/components/magazine/RelatedMagazines';
 import RelatedPosts from '@/components/magazine/RelatedPosts';
 import RelatedProducts from '@/components/magazine/RelatedProducts';
 import MagazineTags from '@/components/magazine/MagazineTags';
+
 import { getMagazineDetail } from '@/pages/api/magazine/api';
 import { MagazineDetail } from '@/pages/api/magazine/model';
 import { FeedTypeCode } from '@/constants/Feed';
