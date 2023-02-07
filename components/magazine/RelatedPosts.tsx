@@ -14,7 +14,7 @@ import '@/styles/carousel.css';
 export default function RelatedPosts({ relatedPosts }: { relatedPosts: RelatedFeed[] }) {
     const router = useRouter();
     const NEXT_PUBLIC_BUCKET_URL = String(process.env.NEXT_PUBLIC_BUCKET_URL);
-    const clickHandler = useCallback(() => window.location.href=`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'PostScreen', param: {}}}))`,[]);
+    //const clickHandler = useCallback(() => window.location.href=`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'PostScreen', param: {}}}))`,[]);
 
     const [ref] = useKeenSlider<HTMLDivElement>({
         //loop: true,
@@ -32,7 +32,8 @@ export default function RelatedPosts({ relatedPosts }: { relatedPosts: RelatedFe
             <div ref={ref} className="keen-slider pl-4">
             {relatedPosts.map((post, index) => (
                     <div key={post.feedId} className="keen-slider__slide">
-                        <Link href="#" onClick={clickHandler}>
+                        {/* <Link href="#" onClick={clickHandler}> */}
+                        <Link href={`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'PostDetailScreen', param: {feedId: ${post.feedId}, postIndex: 0}}))`} >
                             <Image
                                 src={NEXT_PUBLIC_BUCKET_URL + post.thumbnailFilePath}
                                 alt={post.feedTitle}
