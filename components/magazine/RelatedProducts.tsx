@@ -14,7 +14,7 @@ import '@/styles/carousel.css';
 export default function RelatedProducts({ relatedProducts }: { relatedProducts: RelatedProduct[] }) {
     const router = useRouter();
     const NEXT_PUBLIC_BUCKET_URL = String(process.env.NEXT_PUBLIC_BUCKET_URL);
-    const clickHandler = useCallback(() => window.location.href=`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'MagazineScreen', param: {}}}))`,[]);
+    //const clickHandler = useCallback(() => window.location.href=`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'ProductDetailScreen', param: {}}}))`,[]);
 
     const [ref] = useKeenSlider<HTMLDivElement>({
         //loop: true,
@@ -32,7 +32,8 @@ export default function RelatedProducts({ relatedProducts }: { relatedProducts: 
             <div ref={ref} className="keen-slider pl-4 mb-8">
             {relatedProducts.map((product, index) => (
                     <div key={product.productId} className="keen-slider__slide">
-                        <Link href="#" onClick={clickHandler}>
+                        {/* <Link href="#" onClick={clickHandler}> */}
+                        <Link href={`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'ProductDetailScreen', param: {productId:${product.productId}}}}))`}>
                             <Image
                                 src={NEXT_PUBLIC_BUCKET_URL + product.thumbnailFilePath}
                                 alt={product.productName}
