@@ -33,7 +33,7 @@ export default function RelatedPosts({ relatedPosts }: { relatedPosts: RelatedFe
             {relatedPosts.map((post, index) => (
                     <div key={post.feedId} className="keen-slider__slide">
                         {/* <Link href="#" onClick={clickHandler}> */}
-                        <Link href={`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'PostDetailScreen', param: {feedId: ${post.feedId}, postIndex: 0}}))`} >
+                        <Link href={`javascript:window.ReactNativeWebView.postMessage(JSON.stringify({ type:'NAVIGATE_WITH_PARAM', payload: {screenName: 'PostDetailScreen', param: {feedId: ${post.feedId}, postIndex: 0}}}))`} >
                             <Image
                                 src={NEXT_PUBLIC_BUCKET_URL + post.thumbnailFilePath}
                                 alt={post.feedTitle}
