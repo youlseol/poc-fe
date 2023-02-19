@@ -18,6 +18,7 @@ export default function Head() {
                 content="가전 커뮤니티, 220코드앤코드, 가전 취향, 프리미엄 가전, 가전, 집 꾸미기, 홈 인테리어, 홈 스타일링, 가전 리뷰, 요즘 가전, 후기, 노하우, 이용 꿀팁, 가전 리뷰, 220, 원룸, 아파트, 신혼, 신혼가전, 리모델링"
             />
             <link rel="icon" href="/titleIcon.png"></link>
+
         </>
     );
 }

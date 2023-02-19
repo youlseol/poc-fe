@@ -12,7 +12,8 @@
     "format:win": "prettier --write \".\\**\\*.{ts,tsx,js,jsx}\" --config ./.prettierrc",
     "preview": "next build && next start",
     "export": "next export",
-    "clean": "rm -rf .next",
+    "clean": "rm -rf .next out",
+    "clean:win": "rmdir /s /q .next out",
     "kill": "npx kill-port 3000"
   },
   "dependencies": {
